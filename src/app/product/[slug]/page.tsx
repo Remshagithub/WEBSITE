@@ -76,7 +76,13 @@ const products: IProduct[] = [
   },
 ];
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: {
+    slug: string
+  }
+}
+
+export default function ProductPage({ params }: Props) {
   const router = useRouter();
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
